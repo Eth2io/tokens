@@ -8,4 +8,7 @@ cache:
     - "node_modules"
 
 script:
-  - npm test
+  - '[ "$TRAVIS_PULL_REQUEST" = "false" ] && npm run verify || npm run test'
+
+git:
+  depth: 5
